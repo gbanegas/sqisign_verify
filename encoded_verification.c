@@ -111,7 +111,7 @@ ec_point_from_bytes(ec_point_t *point, const byte_t *enc)
     return proj_from_bytes(&point->x, &point->z, enc);
 }
 
-static byte_t *
+/*static byte_t *
 ec_basis_to_bytes(byte_t *enc, const ec_basis_t *basis)
 {
     enc = ec_point_to_bytes(enc, &basis->P);
@@ -127,7 +127,7 @@ ec_basis_from_bytes(ec_basis_t *basis, const byte_t *enc)
     enc = ec_point_from_bytes(&basis->Q, enc);
     enc = ec_point_from_bytes(&basis->PmQ, enc);
     return enc;
-}
+}*/
 
 // public API
 
