@@ -1,0 +1,3 @@
+/home/gustavo/CLionProjects/verification_skii/cmake-build-debug/CMakeFiles/verification_skii.dir
+/home/gustavo/CLionProjects/verification_skii/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/gustavo/CLionProjects/verification_skii/cmake-build-debug/CMakeFiles/rebuild_cache.dir
