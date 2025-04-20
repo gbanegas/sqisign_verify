@@ -675,7 +675,7 @@ static int modcmp(const spint *a, const spint *b) {
  API functions calling generated code above
  ******************************************************************************/
 
-#include "../fp.h"
+#include "fp.h"
 
 const digit_t ZERO[NWORDS_FIELD] = { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
 const digit_t ONE[NWORDS_FIELD] = { 0x00000666, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
