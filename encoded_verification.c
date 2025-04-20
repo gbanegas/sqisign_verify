@@ -9,6 +9,7 @@ typedef unsigned char byte_t;
 
 // digits
 
+/*
 static void
 encode_digits(byte_t *enc, const digit_t *x, size_t nbytes)
 {
@@ -26,6 +27,7 @@ encode_digits(byte_t *enc, const digit_t *x, size_t nbytes)
     memcpy(enc, (const byte_t *)x, nbytes);
 #endif
 }
+*/
 
 static void
 decode_digits(digit_t *x, const byte_t *enc, size_t nbytes, size_t ndigits)
