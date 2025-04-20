@@ -42,12 +42,14 @@ decode_digits(digit_t *x, const byte_t *enc, size_t nbytes, size_t ndigits)
 
 // fp2_t
 
+/*
 static byte_t *
 fp2_to_bytes(byte_t *enc, const fp2_t *x)
 {
     fp2_encode(enc, x);
     return enc + FP2_ENCODED_BYTES;
 }
+*/
 
 static const byte_t *
 fp2_from_bytes(fp2_t *x, const byte_t *enc)
@@ -58,7 +60,7 @@ fp2_from_bytes(fp2_t *x, const byte_t *enc)
 
 // curves and points
 
-static byte_t *
+/*static byte_t *
 proj_to_bytes(byte_t *enc, const fp2_t *x, const fp2_t *z)
 {
     assert(!fp2_is_zero(z));
@@ -76,7 +78,8 @@ proj_to_bytes(byte_t *enc, const fp2_t *x, const fp2_t *z)
     fp2_mul(&tmp, x, &tmp);
     enc = fp2_to_bytes(enc, &tmp);
     return enc;
-}
+}*/
+
 
 static const byte_t *
 proj_from_bytes(fp2_t *x, fp2_t *z, const byte_t *enc)
@@ -86,11 +89,14 @@ proj_from_bytes(fp2_t *x, fp2_t *z, const byte_t *enc)
     return enc;
 }
 
+
+/*
 static byte_t *
 ec_curve_to_bytes(byte_t *enc, const ec_curve_t *curve)
 {
     return proj_to_bytes(enc, &curve->A, &curve->C);
 }
+*/
 
 static const byte_t *
 ec_curve_from_bytes(ec_curve_t *curve, const byte_t *enc)
@@ -99,7 +105,7 @@ ec_curve_from_bytes(ec_curve_t *curve, const byte_t *enc)
     return proj_from_bytes(&curve->A, &curve->C, enc);
 }
 
-static byte_t *
+/*static byte_t *
 ec_point_to_bytes(byte_t *enc, const ec_point_t *point)
 {
     return proj_to_bytes(enc, &point->x, &point->z);
@@ -109,7 +115,7 @@ static const byte_t *
 ec_point_from_bytes(ec_point_t *point, const byte_t *enc)
 {
     return proj_from_bytes(&point->x, &point->z, enc);
-}
+}*/
 
 /*static byte_t *
 ec_basis_to_bytes(byte_t *enc, const ec_basis_t *basis)
@@ -131,6 +137,7 @@ ec_basis_from_bytes(ec_basis_t *basis, const byte_t *enc)
 
 // public API
 
+/*
 byte_t *
 public_key_to_bytes(byte_t *enc, const public_key_t *pk)
 {
@@ -141,7 +148,7 @@ public_key_to_bytes(byte_t *enc, const public_key_t *pk)
     *enc++ = pk->hint_pk;
     assert(enc - start == PUBLICKEY_BYTES);
     return enc;
-}
+}*/
 
 const byte_t *
 public_key_from_bytes(public_key_t *pk, const byte_t *enc)
@@ -155,6 +162,7 @@ public_key_from_bytes(public_key_t *pk, const byte_t *enc)
     return enc;
 }
 
+/*
 void
 signature_to_bytes(byte_t *enc, const signature_t *sig)
 {
@@ -185,7 +193,7 @@ signature_to_bytes(byte_t *enc, const signature_t *sig)
     *enc++ = sig->hint_chall;
 
     assert(enc - start == SIGNATURE_BYTES);
-}
+}*/
 
 void
 signature_from_bytes(signature_t *sig, const byte_t *enc)
