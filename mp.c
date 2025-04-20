@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <inttypes.h>
 #include <stdio.h>
+#include <string.h>
 
 // double-wide multiplication
 void
@@ -281,6 +282,12 @@ mp_inv_2e(digit_t *b, const digit_t *a, int e, unsigned int nwords)
     assert((a[0] & 1) == 1);
 
     digit_t x[nwords], y[nwords], aa[nwords], mp_one[nwords], tmp[nwords];
+    memset(x, 0, sizeof x);
+    memset(y, 0, sizeof x);
+    memset(aa, 0, sizeof x);
+    memset(mp_one, 0, sizeof x);
+    memset(tmp, 0, sizeof x);
+
     mp_copy(aa, a, nwords);
 
     mp_one[0] = 1;
